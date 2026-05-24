@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 Digital Clock - Multiple Timezones</title>
+    <link rel="stylesheet" href="clock-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🌍 Global Digital Clock</h1>
+            <p>Display current time across different time zones</p>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <h2>Add a Timezone</h2>
+            
+            <!-- Input Field -->
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="timezone-input" 
+                    placeholder="e.g., America/New_York, Europe/London, Asia/Tokyo"
+                    onkeypress="if(event.key==='Enter') addTimezone()"
+                >
+                <button class="add-btn" onclick="addTimezone()">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </div>
+
+            <!-- Preset Buttons -->
+            <label class="presets-label">Quick Add (Popular Timezones):</label>
+            <div class="preset-buttons">
+                <button class="preset-btn" onclick="addPreset('America/New_York')">🗽 New York</button>
+                <button class="preset-btn" onclick="addPreset('America/Los_Angeles')">🌴 Los Angeles</button>
+                <button class="preset-btn" onclick="addPreset('Europe/London')">🇬🇧 London</button>
+                <button class="preset-btn" onclick="addPreset('Europe/Paris')">🇫🇷 Paris</button>
+                <button class="preset-btn" onclick="addPreset('Europe/Berlin')">🇩🇪 Berlin</button>
+                <button class="preset-btn" onclick="addPreset('Asia/Tokyo')">🇯🇵 Tokyo</button>
+                <button class="preset-btn" onclick="addPreset('Asia/Dubai')">🇦🇪 Dubai</button>
+                <button class="preset-btn" onclick="addPreset('Asia/Kolkata')">🇮🇳 India</button>
+                <button class="preset-btn" onclick="addPreset('Australia/Sydney')">🇦🇺 Sydney</button>
+                <button class="preset-btn" onclick="addPreset('UTC')">🌐 UTC</button>
+            </div>
+
+            <!-- Reset Button -->
+            <button class="reset-btn" onclick="resetClocks()">
+                <i class="fas fa-redo"></i> Reset to Default
+            </button>
+        </div>
+
+        <!-- Clock Grid -->
+        <div class="clock-grid" id="clock-grid">
+            <!-- Clocks will be added here -->
+        </div>
+    </div>
+
+    <script src="clock-script.js"></script>
+</body>
+</html>
