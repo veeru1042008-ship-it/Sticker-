@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StickerHub | Custom Die-Cut Stickers</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Sticker<span>Hub</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Level Up Your Gear</h1>
+            <p>Premium matte, gloss, and holographic die-cut stickers.</p>
+            <a href="#shop" class="btn">Shop Collection</a>
+        </div>
+    </header>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop-container">
+        <div class="section-title">
+            <h2>Trending Stickers</h2>
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterStickers('all')">All</button>
+                <button class="filter-btn" onclick="filterStickers('retro')">Retro</button>
+                <button class="filter-btn" onclick="filterStickers('cute')">Cute</button>
+                <button class="filter-btn" onclick="filterStickers('brand')">Brands</button>
+            </div>
+        </div>
+
+        <!-- Product Grid (Populated by JS) -->
+        <div id="product-grid" class="product-grid">
+            <!-- Stickers will appear here -->
+        </div>
+    </section>
+
+    <!-- Cart Sidebar/Modal -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <i class="fas fa-times" onclick="toggleCart()"></i>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p>Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-price">
+                <span>Total:</span>
+                <span id="total-amount">$0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 StickerHub. Designed for Stickers.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
